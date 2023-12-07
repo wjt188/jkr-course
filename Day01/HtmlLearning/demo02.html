@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>模仿小米商场布局</title>
+  <link rel="stylesheet" href="demo2.css">
+</head>
+<body>
+<header>
+  <nav>
+    <!-- 导航栏 -->
+    <ul>
+      <li><a href="#">首页</a></li>
+      <li><a href="#">产品</a></li>
+      <li><a href="#">新闻</a></li>
+      <li><a href="#">关于</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="carousel-container">
+  <div class="carousel-slide active">
+    <img src="demo.jpg" alt="Image 1">
+  </div>
+  <div class="carousel-slide">
+    <img src="demo2.jpg" alt="Image 2">
+  </div>
+  <div class="carousel-slide">
+    <img src="demo3.jpg" alt="Image 3">
+  </div>
+  <!-- Add Arrows -->
+  <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+  <a class="next" onclick="moveSlide(1)">&#10095;</a>
+</div>
+
+<section class="features">
+  <!-- 特色产品区 -->
+  <article>
+    <img src="demo.jpg" alt="产品图片1">
+    <h2>产品1</h2>
+    <p>产品1描述...</p>
+  </article>
+  <article>
+    <img src="demo2.jpg" alt="产品图片2">
+    <h2>产品2</h2>
+    <p>产品2描述...</p>
+  </article>
+  <!-- 更多产品... -->
+</section>
+
+<footer>
+  <!-- 页脚 -->
+  <p>&copy; 2023 模仿小米商场</p>
+</footer>
+</body>
+<script>
+  let slideIndex = 0;
+  showSlides(slideIndex);
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("carousel-slide");
+    if (n >= slides.length) {slideIndex = 0}
+    if (n < 0) {slideIndex = slides.length - 1}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex].style.display = "block";
+  }
+
+  function moveSlide(n) {
+    showSlides(slideIndex += n);
+  }
+</script>
+
+
+</html>
